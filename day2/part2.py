@@ -17,8 +17,8 @@ def isInvalid(id):
 
 sum = 0
 for curRange in content.split(","):
-   start, end = curRange.split("-")
-   for id in range(int(start), int(end)+1):
+   start, end = map(int, curRange.split("-"))
+   for id in range(start, end+1):
       if isInvalid(str(id)):
         sum += id
 
