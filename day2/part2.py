@@ -10,14 +10,12 @@ def stringChunks(s, chunkLength):
    return [s[i:i + chunkLength] for i in range(0, len(s), chunkLength)]
 
 def isInvalid(id):
-   n = len(id)
-   for i in range(1, (n//2) + 1):
+   for i in range(1, (len(id)//2) + 1):
       if len(set(stringChunks(str(id), i))) == 1:
          return True
    return False
 
 sum = 0
-
 for curRange in content.split(","):
    start, end = curRange.split("-")
    for id in range(int(start), int(end)+1):
