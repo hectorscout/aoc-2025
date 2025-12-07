@@ -1,9 +1,6 @@
 import os
-currentDir = os.path.dirname(os.path.abspath(__file__))
-filePath = os.path.join(currentDir, "input1.txt")
-
-print(filePath)
-with open(filePath, "r") as file:
+inputFile = "input1.txt"
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), inputFile), "r") as file:
    content = file.read()
 
 def stringChunks(s, chunkLength):
