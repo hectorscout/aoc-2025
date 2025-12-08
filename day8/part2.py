@@ -28,7 +28,7 @@ pointGraph = {}
 def getGraphNodeCount(point, visitedPoints):  
     if point in visitedPoints:
         return 0
-    visitedPoints[point] = True
+    visitedPoints.add(point)
     count = 1
     if not point in pointGraph:
         return count
@@ -37,7 +37,7 @@ def getGraphNodeCount(point, visitedPoints):
     return count
 
 def checkGraph():
-    return pointCount == getGraphNodeCount(points[0], {})
+    return pointCount == getGraphNodeCount(points[0], set())
 
 def addGraphEdge(point1, point2):
     if not point1 in pointGraph:

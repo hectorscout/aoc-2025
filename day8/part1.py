@@ -31,12 +31,12 @@ for point1, point2, distance in distances[:1000]:
     pointGraph[point1].append(point2)
     pointGraph[point2].append(point1)
     
-visitedPoints = {}
+visitedPoints = set()
 
 def getGraphNodeCount(point):  
     if point in visitedPoints:
         return 0
-    visitedPoints[point] = True
+    visitedPoints.add(point)
     count = 1
     if not point in pointGraph:
         return count
