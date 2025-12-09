@@ -1,4 +1,3 @@
-import math
 inputFile = "sample.txt"
 # inputFile = "input1.txt"
 with open(inputFile, "r") as file:
